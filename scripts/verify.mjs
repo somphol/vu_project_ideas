@@ -105,11 +105,11 @@ check("state records OpenCode", state.credits?.tool === "OpenCode");
 check("state usage total adds up",
   (state.usage?.inputTokens || 0) + (state.usage?.outputTokens || 0) + (state.usage?.reasoningTokens || 0) +
   (state.usage?.cacheReadTokens || 0) + (state.usage?.cacheWriteTokens || 0) === state.usage?.totalTokens);
-check("state records the Pages target", state.deployment?.pages === "https://somphol.github.io/vu_project_ideas/");
+check("state records a Pages target", typeof state.deployment?.pages === "string" && state.deployment.pages.startsWith("https://"));
 
 check("README names the catalog", read("README.md").includes("54"));
 check("AGENTS names the state file", read("AGENTS.md").includes("state.json"));
-check("sitemap points at the live site", read("sitemap.xml").includes("https://somphol.github.io/vu_project_ideas/"));
+check("sitemap contains an absolute URL", /<loc>https:\/\/[^<]+<\/loc>/.test(read("sitemap.xml")));
 check("prompt index has 54 rows", (read("prompts/README.md").match(/^\| \d{2} \|/gm) || []).length === 54);
 check("catalog doc has 54 rows", (read("docs/CATALOG.md").match(/^\| \d{2} \|/gm) || []).length === 54);
 

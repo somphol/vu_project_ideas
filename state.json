@@ -5,9 +5,9 @@
     "id": "ses_e51d0ff73ffevsWX7XgTOjLWLR",
     "title": "VU Project Ideas catalog",
     "startedAt": "2026-11-06T00:07:58Z",
-    "capturedAt": "2026-11-06T00:27:14Z",
-    "elapsedSeconds": 1156,
-    "elapsed": "19m 16s",
+    "capturedAt": "2026-11-06T00:48:13Z",
+    "elapsedSeconds": 2415,
+    "elapsed": "40m 15s",
     "note": "Built in one OpenCode session: recovered 55 prompt blocks from the local session database, parsed them into 54 unique briefs, curated metadata, built a static searchable catalog, generated 54 copy-ready Markdown files, verified in headless Chrome, documented, and published to GitHub Pages."
   },
   "model": {
@@ -16,12 +16,12 @@
     "provider": "opencode-go"
   },
   "usage": {
-    "inputTokens": 341869,
-    "outputTokens": 43301,
-    "reasoningTokens": 35984,
-    "cacheReadTokens": 5876736,
+    "inputTokens": 425242,
+    "outputTokens": 87472,
+    "reasoningTokens": 51780,
+    "cacheReadTokens": 15286528,
     "cacheWriteTokens": 55134,
-    "totalTokens": 6353024,
+    "totalTokens": 15906156,
     "costUSD": 0.0,
     "note": "Read from the OpenCode session database (session_v2). totalTokens is the sum of the five counters; repeated prompt cache reads dominate the figure. costUSD is 0 on the flat-rate plan. This block is refreshed at the end of the session."
   },
@@ -54,6 +54,7 @@
       "docs/README.md",
       "docs/ARCHITECTURE.md",
       "docs/REPRODUCTION.md",
+      "docs/PROVENANCE.md",
       "docs/DESIGN.md",
       "docs/TESTING.md",
       "docs/DEPLOYMENT.md",
@@ -67,6 +68,7 @@
       "scripts/build.py",
       "scripts/verify.mjs",
       "scripts/extract-session.py",
+      "scripts/parse-source.py",
       ".github/workflows/ci.yml",
       "assets/favicon.svg",
       "assets/studio.png",
@@ -88,7 +90,8 @@
     "staticChecks": 365,
     "browserChecks": 31,
     "consoleErrors": 0,
-    "status": "passed locally"
+    "status": "passed locally and live",
+    "liveBrowserChecks": 31
   },
   "deployment": {
     "repository": "https://github.com/somphol/vu_project_ideas",
@@ -96,7 +99,9 @@
     "host": "GitHub Pages",
     "branch": "main",
     "path": "/",
-    "status": "pending"
+    "status": "live",
+    "verifiedAt": "2026-11-06T00:48:13Z",
+    "note": "Pages built from main / root. The 31-check browser suite passed against the live URL with zero console errors."
   },
   "credits": {
     "tool": "OpenCode",
@@ -108,9 +113,11 @@
   "skill": {
     "name": "vu-project-ideas-studio",
     "title": "VU Project Ideas Studio",
-    "status": "pending",
+    "status": "published",
     "catalog": "https://somphol.github.io/opencode-skills/",
     "source": "https://github.com/somphol/vu_project_ideas",
-    "local": "~/.config/opencode/skills/vu-project-ideas-studio"
+    "local": "~/.config/opencode/skills/vu-project-ideas-studio",
+    "catalogPath": "https://somphol.github.io/opencode-skills/vu-project-ideas-studio/",
+    "validation": "Static 365/365 and browser 31/31 in a scaffolded temp project; reference copied into the skill."
   }
 }
